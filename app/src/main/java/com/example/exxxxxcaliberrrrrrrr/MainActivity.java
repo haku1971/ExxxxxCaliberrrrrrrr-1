@@ -23,10 +23,8 @@ public class MainActivity extends Activity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         GameSurface gameSurface = new GameSurface(this);
-        this.setContentView(new GameSurface(this));
+        this.setContentView(gameSurface);
 //        this.mContext=context;/
-
-
     }
 
     public static void callMe(String valuePassed) {
