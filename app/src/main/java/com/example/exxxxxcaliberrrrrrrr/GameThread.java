@@ -62,8 +62,9 @@ class GameThread extends Thread {
         }
 
         if(!running){
-            Intent myIntent = new Intent(context, Result.class);
+            Intent myIntent = new Intent(context, MainActivity.class);
             context.startActivity(myIntent);
+//            finish();
         }
     }
 
