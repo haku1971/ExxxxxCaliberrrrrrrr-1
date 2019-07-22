@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 //        startActivity(myIntent);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        GameSurface gameSurface = new GameSurface(this);
         this.setContentView(new GameSurface(this));
 //        this.mContext=context;/
 
@@ -32,8 +33,8 @@ public class MainActivity extends Activity {
         Log.d("DEBUG","MainActivity was passed ["+ valuePassed +"]");
     }
 
-    public void ChangeActivity(Context context){
-        Intent myIntent = new Intent(getApplicationContext(), Result.class);
-        startActivity(myIntent);
-    }
+//    public void ChangeActivity(Context context){
+//        Intent myIntent = new Intent(context, Result.class);
+//        startActivity(myIntent);
+//    }
 }

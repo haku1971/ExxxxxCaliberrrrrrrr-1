@@ -43,7 +43,6 @@ class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
 
     private Context context;
     private String score;
-    private MainActivity mainActivity = new MainActivity();
     public GameSurface(Context context) {
         super(context);
 
@@ -279,7 +278,7 @@ class GameSurface extends SurfaceView implements SurfaceHolder.Callback {
             int movingVectorY = RandomVector.nextInt(2048) ;
             charac.setMovingVector(movingVectorX, movingVectorY);
         }
-        this.gameThread = new GameThread(this, holder);
+        this.gameThread = new GameThread(this, holder,context);
         this.gameThread.setRunning(true);
         this.gameThread.start();
 

@@ -2,6 +2,7 @@ package com.example.exxxxxcaliberrrrrrrr;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 import android.widget.Chronometer;
@@ -10,12 +11,12 @@ class GameThread extends Thread {
     private boolean running;
     private GameSurface gameSurface;
     private SurfaceHolder surfaceHolder;
-    private MainActivity mainActivity = new MainActivity();
+    private Context context;
 
-    public GameThread(GameSurface gameSurface, SurfaceHolder surfaceHolder)  {
+    public GameThread(GameSurface gameSurface, SurfaceHolder surfaceHolder, Context context)  {
         this.gameSurface= gameSurface;
         this.surfaceHolder= surfaceHolder;
-
+        this.context = context;
     }
 
     @Override
@@ -61,7 +62,8 @@ class GameThread extends Thread {
         }
 
         if(!running){
-            mainActivity.ChangeActivity(mainActivity.getBaseContext());
+            Intent myIntent = new Intent(context, Result.class);
+            context.startActivity(myIntent);
         }
     }
 
